@@ -1,0 +1,117 @@
+/* Variables de colores - Deezer Theme */
+$primary-color: #A238FF; /* Púrpura Deezer */
+$secondary-color: #121212; /* Fondo oscuro */
+$accent-color: #EF5466; /* Rosa/Coral Deezer */
+$text-color: #ffffff;
+$card-bg: #1A1A1A;
+$shadow-color: rgba(0, 0, 0, 0.3);
+$button-hover: #8B2FD9;
+$next-btn-color: #A238FF;
+$next-btn-hover: #8B2FD9;
+$background-dark: #0D0D0D;
+$text-muted: #A0A0A0;
+$text-light: #ffffff;
+$deezer-purple: #A238FF;
+$deezer-pink: #EF5466;
+$deezer-gradient: linear-gradient(135deg, #A238FF 0%, #EF5466 100%);
+
+/* Fondo degradado */
+body {
+  background: linear-gradient(135deg, #1f1f1f 0%, #121212 100%);
+  color: $text-color;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilizar enlaces */
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $button-hover;
+  }
+}
+
+/* Transiciones suaves */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Estilizar botones */
+button {
+  color: $text-color;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $text-light;
+  }
+}
+
+/* Estilizar inputs */
+input[type="text"], input[type="range"] {
+  background-color: #333;
+  color: $text-color;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Estilizar etiquetas */
+label {
+  color: $text-muted;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Estilizar contenedores */
+.container {
+  padding: 20px;
+  background-color: $secondary-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px $shadow-color;
+  margin-bottom: 20px;
+}
+
+/* Estilizar títulos */
+h1, h2, h3 {
+  color: $primary-color;
+  margin-bottom: 20px;
+}
+
+/* Estilizar listas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Estilizar tarjetas */
+.card {
+  background-color: $card-bg;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px $shadow-color;
+  margin-bottom: 20px;
+}
+
+/* Estilizar imágenes */
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px $shadow-color;
+}
