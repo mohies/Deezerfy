@@ -77,7 +77,7 @@
           </div>
         </div>
         <div class="player-info">
-          <h3 class="song-title">{{ currentSong?.title || 'No hay canción' }}</h3>
+          <h3 class="song-title" @click="navigateToAlbum">{{ currentSong?.title || 'No hay canción' }}</h3>
           <p class="artist-name" @click="navigateToArtist">{{ currentSong?.artist?.name || 'Selecciona una canción' }}</p>
         </div>
         <button 
@@ -400,6 +400,12 @@ const toggleFavorite = () => {
 const navigateToArtist = () => {
   if (currentSong.value?.artist?.id) {
     router.push({ name: 'Info', params: { type: 'artist', id: currentSong.value.artist.id } });
+  }
+};
+
+const navigateToAlbum = () => {
+  if (currentSong.value?.album?.id) {
+    router.push({ name: 'Info', params: { type: 'album', id: currentSong.value.album.id } });
   }
 };
 

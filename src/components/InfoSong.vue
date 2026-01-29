@@ -9,9 +9,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch, defineProps } from 'vue';
 import { useRoute } from 'vue-router';
 import { useMainStore } from '@/stores/stores';
+
+// Props recibidas del componente padre
+const props = defineProps({
+  id: [String, Number],
+  type: String
+});
 
 // Obtenemos la instancia de la ruta actual
 const route = useRoute();
@@ -25,6 +31,7 @@ const store = useMainStore();
 // Función para obtener los datos de la canción desde la API de Deezer
 const fetchSong = async (songId) => {
   try {
+    song.value = null; // Reset mientras carga
     // Realizamos una solicitud a la API de Deezer para obtener los datos de la canción
     const response = await fetch(`http://localhost:8080/https://api.deezer.com/track/${songId}`);
     if (!response.ok) throw new Error('Error al obtener datos de la canción');
@@ -42,9 +49,15 @@ const playSong = () => {
   store.setCurrentSong(song.value);
 };
 
-// Cuando el componente se monta, obtenemos los datos de la canción utilizando el ID de la ruta
+// Cuando el componente se monta, obtenemos los datos de la canción
 onMounted(() => {
-  fetchSong(route.params.id);
+  const songId = props.id || route.params.id;
+  if (songId) fetchSong(songId);
+});
+
+// Observar cambios en el id de props para recargar
+watch(() => props.id, (newId) => {
+  if (newId) fetchSong(newId);
 });
 </script>
 
