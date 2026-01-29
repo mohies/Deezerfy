@@ -60,11 +60,5 @@ Luego vuelve a hacer `git push` y autentícate con la cuenta propietaria del rep
 - `cors-anywhere/` — proxy CORS local incluido.
 - `public/` — activos estáticos.
 
-**Notas útiles**:
-- Si modificas componentes o estilos, Vite recarga automáticamente en `npm run dev`.
-- Para trabajar con la API real de Deezer comprueba límites y políticas de uso.
-
-Si quieres, puedo añadir un script de `Makefile` o atajos adicionales, o preparar un `deploy` automático a Netlify/Vercel. ¿Quieres que lo añada?
 
 *** Fin ***
-## 📄 Additional Resources
